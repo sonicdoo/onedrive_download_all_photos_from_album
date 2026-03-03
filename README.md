@@ -1,17 +1,15 @@
 # OneDrive Photo Album Downloader
 
-Since onedrive web does not offer a simple download all pictures from a onedrive album ...
-This tool is to download photos from shared OneDrive albums using browser automation and web scraping techniques.
+Since OneDrive web does not offer a simple "download all pictures" option from a shared album, this tool automates the process using Selenium browser automation.
 
 ## 🌟 Features
 
 - **Selenium Batch Downloader**: Smart batch processing with auto-scrolling and authentication support
-- **Playwright Automation**: Modern browser automation alternative
-- **Chrome DevTools Protocol**: Direct CDP communication for advanced control
 - **Authentication Handling**: Supports both public and private/authenticated albums
 - **Duplicate Prevention**: Intelligent tracking to avoid re-downloading photos
 - **Progress Tracking**: Real-time progress indicators and batch statistics
 - **Flexible Output**: Configurable download directories
+- **Visible Browser**: See the automation in action for transparency and debugging
 
 ## 🚀 Quick Start
 
@@ -24,8 +22,8 @@ This tool is to download photos from shared OneDrive albums using browser automa
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/onedrive-photo-downloader.git
-cd onedrive-photo-downloader
+git clone https://github.com/sonicdoo/onedrive_download_all_photos_from_album.git
+cd onedrive_download_all_photos_from_album
 
 # Create virtual environment
 python -m venv .venv
@@ -43,12 +41,11 @@ pip install -r requirements.txt
 ### Basic Usage
 
 ```bash
-# Recommended: Selenium Batch Method (handles authentication)
+# Run the Selenium Batch Downloader (handles authentication)
 python download_selenium_batch.py "YOUR_ONEDRIVE_ALBUM_URL"
 
-# Alternative methods
-python download_playwright.py "YOUR_ONEDRIVE_ALBUM_URL"
-python download_cdp.py "YOUR_ONEDRIVE_ALBUM_URL"
+# With custom output directory
+python download_selenium_batch.py "YOUR_ONEDRIVE_ALBUM_URL" my_photos
 ```
 
 ## 📦 Available Scripts
@@ -89,46 +86,10 @@ python download_selenium_batch.py "https://1drv.ms/a/c/..."  # defaults to 'down
 5. Scrolls to load more photos
 6. Repeats until target count or no more photos found
 
-### 🎭 `download_playwright.py`
-
-**Best for: Modern browser automation**
-
-Uses Playwright for reliable cross-browser automation.
-
-**Features:**
-- Supports Chrome, Firefox, and WebKit
-- Better performance than Selenium
-- Modern async/await patterns
-- Built-in auto-waiting
-
-**Usage:**
-```bash
-python download_playwright.py "YOUR_ALBUM_URL"
-```
-
-### 🔧 `download_cdp.py`
-
-**Best for: Advanced control and debugging**
-
-Uses Chrome DevTools Protocol for direct browser communication.
-
-**Features:**
-- Low-level browser control
-- Network request interception
-- Performance monitoring
-- Direct Chrome communication
-
-**Usage:**
-```bash
-python download_cdp.py "YOUR_ALBUM_URL"
-```
-
 ### 🛠️ Utility Scripts
 
 - **`debug_page.py`**: Debug tool to inspect page structure and elements
 - **`diagnose_page.py`**: Diagnostic tool to analyze album accessibility
-- **`download_pw.py`**: Alternative Playwright implementation
-- **`download_final.py`**: Consolidated downloader with multiple fallback methods
 
 ## 🔧 Requirements
 
@@ -137,7 +98,6 @@ requests>=2.31.0          # HTTP library
 beautifulsoup4>=4.12.0    # HTML parsing
 selenium>=4.15.0          # Browser automation
 webdriver-manager>=4.0.0  # Automatic ChromeDriver management
-playwright>=1.40.0        # Modern browser automation
 ```
 
 ## 📖 Detailed Configuration
@@ -288,9 +248,8 @@ This tool is for educational purposes and personal use only. Respect Microsoft's
 
 ## 🙏 Acknowledgments
 
-- Built with [Selenium](https://www.selenium.dev/)
-- [Playwright](https://playwright.dev/) for modern automation
-- [webdriver-manager](https://github.com/SergeyPirogov/webdriver_manager) for driver management
+- Built with [Selenium](https://www.selenium.dev/) for reliable browser automation
+- [webdriver-manager](https://github.com/SergeyPirogov/webdriver_manager) for automatic ChromeDriver management
 
 ## 📮 Support
 
