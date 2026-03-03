@@ -86,11 +86,6 @@ python download_selenium_batch.py "https://1drv.ms/a/c/..."  # defaults to 'down
 5. Scrolls to load more photos
 6. Repeats until target count or no more photos found
 
-### 🛠️ Utility Scripts
-
-- **`debug_page.py`**: Debug tool to inspect page structure and elements
-- **`diagnose_page.py`**: Diagnostic tool to analyze album accessibility
-
 ## 🔧 Requirements
 
 ```txt
